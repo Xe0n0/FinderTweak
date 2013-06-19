@@ -2,7 +2,7 @@ FinderTabSwitching
 ==================
 Inspired by [rs/SafariTabSwitching](https://github.com/rs/SafariTabSwitching).
 
-A plugin allows you to switch tabs in Finder.app on OS X 10.9 Mavericks with CMD+num shortcuts. Powered by [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php).
+A plugin allows you to switch tabs in Finder.app on OS X 10.9 Mavericks with `⌘ + num` shortcuts. Powered by [SIMBL](http://www.culater.net/software/SIMBL/SIMBL.php).
 
 Mavericks Only.
 
