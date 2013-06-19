@@ -1,0 +1,284 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		89A99CB5ED3E4F708AD362EB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5F28A403E544B83B5DC64D8 /* Cocoa.framework */; };
+		AB5E1F5D01DD4572A8A1047B /* JRSwizzle.h in Headers */ = {isa = PBXBuildFile; fileRef = CF094DB80F3F47708122527A /* JRSwizzle.h */; };
+		EE8941470D2F47ACB74C8977 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F3EB65E841F44717BB0CDDDF /* Pods-dummy.m */; };
+		F2684997CE684DE4B964C1CD /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 413F5459B3EA40738BC755D7 /* JRSwizzle.m */; settings = {COMPILER_FLAGS = "-fobjc-arc -DOS_OBJECT_USE_OBJC=0"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		413F5459B3EA40738BC755D7 /* JRSwizzle.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = JRSwizzle/JRSwizzle.m; sourceTree = SOURCE_ROOT; };
+		5063DB19AF59443EA1438482 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = SOURCE_ROOT; };
+		A33D0A7DFFF248A49DA2987E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5F28A403E544B83B5DC64D8 /* Cocoa.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Cocoa.framework; sourceTree = DEVELOPER_DIR; };
+		AD2F1EF7684C43E59A2C4D8D /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = SOURCE_ROOT; };
+		B9770B988B834662A024112E /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = SOURCE_ROOT; };
+		CEE4D36EC38A45D3B292EE0D /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.xcconfig; sourceTree = SOURCE_ROOT; };
+		CF094DB80F3F47708122527A /* JRSwizzle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = JRSwizzle/JRSwizzle.h; sourceTree = SOURCE_ROOT; };
+		DFAC71A9F1FE4BDFBE6BAA75 /* Pods-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-prefix.pch"; sourceTree = SOURCE_ROOT; };
+		E633B36B9CE2401A83572BB7 /* Foundation.framework */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.8.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		F3EB65E841F44717BB0CDDDF /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = SOURCE_ROOT; };
+		F65F8A0033CA4B2CB3721C05 /* Pods-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-environment.h"; sourceTree = SOURCE_ROOT; };
+		F7D99B44B72746698F57597F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F7CB2A5EF4224053A7FC60D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89A99CB5ED3E4F708AD362EB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		28517DB1DD2A4689B913D3C1 /* JRSwizzle */ = {
+			isa = PBXGroup;
+			children = (
+				CF094DB80F3F47708122527A /* JRSwizzle.h */,
+				413F5459B3EA40738BC755D7 /* JRSwizzle.m */,
+			);
+			name = JRSwizzle;
+			sourceTree = "<group>";
+		};
+		4F7E848F9C30462B95F38B01 = {
+			isa = PBXGroup;
+			children = (
+				852DFC0FE1984B9AA625622D /* Frameworks */,
+				56389AF1F0024DA1BC0C225B /* Pods */,
+				778214A19C3A4F858C050471 /* Products */,
+				CEF056F21876461C9E114DE2 /* Targets Support Files */,
+				F7D99B44B72746698F57597F /* Podfile */,
+			);
+			sourceTree = "<group>";
+		};
+		56389AF1F0024DA1BC0C225B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				28517DB1DD2A4689B913D3C1 /* JRSwizzle */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		778214A19C3A4F858C050471 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A33D0A7DFFF248A49DA2987E /* libPods.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		852DFC0FE1984B9AA625622D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5F28A403E544B83B5DC64D8 /* Cocoa.framework */,
+				E633B36B9CE2401A83572BB7 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A44DF848883242A885FB025B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CEE4D36EC38A45D3B292EE0D /* Pods.xcconfig */,
+				F65F8A0033CA4B2CB3721C05 /* Pods-environment.h */,
+				DFAC71A9F1FE4BDFBE6BAA75 /* Pods-prefix.pch */,
+				5063DB19AF59443EA1438482 /* Pods-resources.sh */,
+				AD2F1EF7684C43E59A2C4D8D /* Pods-acknowledgements.plist */,
+				B9770B988B834662A024112E /* Pods-acknowledgements.markdown */,
+				F3EB65E841F44717BB0CDDDF /* Pods-dummy.m */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CEF056F21876461C9E114DE2 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A44DF848883242A885FB025B /* Pods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8341C822190E48FBBFB4A00D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AB5E1F5D01DD4572A8A1047B /* JRSwizzle.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		A5B86E2F393742E082CE4982 /* Pods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 70114BEB1A87425BB48A503B /* Build configuration list for PBXNativeTarget "Pods" */;
+			buildPhases = (
+				DF791965FA2F4FBAA5E847E6 /* Sources */,
+				F7CB2A5EF4224053A7FC60D3 /* Frameworks */,
+				8341C822190E48FBBFB4A00D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pods;
+			productName = Pods;
+			productReference = A33D0A7DFFF248A49DA2987E /* libPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1F3592D3E304BF3BB6ABB69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+			};
+			buildConfigurationList = 59FB7937803F4C009BF2FEB2 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 4F7E848F9C30462B95F38B01;
+			productRefGroup = 778214A19C3A4F858C050471 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5B86E2F393742E082CE4982 /* Pods */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DF791965FA2F4FBAA5E847E6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F2684997CE684DE4B964C1CD /* JRSwizzle.m in Sources */,
+				EE8941470D2F47ACB74C8977 /* Pods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		12F4F6DC176C4F4A94588E41 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+			};
+			name = Debug;
+		};
+		86149336A92C4680BE634E81 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEE4D36EC38A45D3B292EE0D /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "";
+				PODS_HEADERS_SEARCH_PATHS = "${PODS_BUILD_HEADERS_SEARCH_PATHS}";
+				PODS_ROOT = "${SRCROOT}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		9303711BC6564372B7B24E6B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+			};
+			name = Release;
+		};
+		E77D5AD89EC44FFDA598714F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CEE4D36EC38A45D3B292EE0D /* Pods.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DSTROOT = /tmp/xcodeproj.dst;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Pods-prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				OTHER_CFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"-DNS_BLOCK_ASSERTIONS=1",
+					"$(inherited)",
+				);
+				OTHER_LDFLAGS = "";
+				PODS_HEADERS_SEARCH_PATHS = "${PODS_BUILD_HEADERS_SEARCH_PATHS}";
+				PODS_ROOT = "${SRCROOT}";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		59FB7937803F4C009BF2FEB2 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9303711BC6564372B7B24E6B /* Release */,
+				12F4F6DC176C4F4A94588E41 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		70114BEB1A87425BB48A503B /* Build configuration list for PBXNativeTarget "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E77D5AD89EC44FFDA598714F /* Release */,
+				86149336A92C4680BE634E81 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1F3592D3E304BF3BB6ABB69 /* Project object */;
+}

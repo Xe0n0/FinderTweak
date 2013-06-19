@@ -1,0 +1,249 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>JRSwizzle 1.0 Reference</title>
+		<link rel="stylesheet" type="text/css" href="css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="index.html">JRSwizzle 1.0 </a></h1>
+				<a id="developerHome" href="index.html">Jonathan &apos;Wolf&apos; Rentzsch</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">JRSwizzle 1.0 Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar"></ul>
+		</header>
+		<article>
+			<div id="overview_contents" role="main">
+				<div class="main-navigation navigation-top">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">JRSwizzle 1.0 Reference</h1>
+					</div>		
+				</div>
+				<div id="container">
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<h1>JRSwizzle</h1>
+
+<h2>Description</h2>
+
+<p>JRSwizzle is source code package that offers a single, easy, correct+consistent interface for exchanging Objective-C method implementations (&ldquo;method swizzling&rdquo;) across many versions of Mac OS X, iOS, Objective-C and runtime architectures.</p>
+
+<p>More succinctly: <em>JRSwizzle wants to be your one-stop-shop for all your method swizzling needs.</em></p>
+
+<h2>Download</h2>
+
+<pre><code>$ cd /path/to/top/of/your/project
+$ git submodule add git://github.com/rentzsch/jrswizzle.git JRSwizzle
+$ git submodule init &amp;&amp; git submodule update
+
+# OPTIONAL: Execute the following commands if you want to explicitly peg
+# to a certain version. Otherwise `git submodule update` will keep you
+# current with HEAD.
+
+$ cd JRSwizzle
+$ git checkout v1.0
+</code></pre>
+
+<h2>Reasons for Existence</h2>
+
+<ul>
+<li><strong>Easy:</strong> Just do this: <code>[SomeClass jr_swizzle:@selector(foo) withMethod:@selector(my_foo) error:&amp;error];</code> Voila.</li>
+<li><strong>Correct:</strong> There&rsquo;s a subtle interaction between method swizzling and method inheritance. Following in Kevin Ballard&rsquo;s footsteps, this package Does The Right Thing.</li>
+<li><strong>Compatible:</strong> JRSwizzle should Just Work on any version of Mac OS X and iOS you care about. Here&rsquo;s the exhaustive compatibility list:
+
+<ul>
+<li>Mac OS X v10.3/ppc (Ballard implementation)</li>
+<li>Mac OS X v10.4/ppc (Ballard implementation)</li>
+<li>Mac OS X v10.4/i386 (Ballard implementation)</li>
+<li>Mac OS X v10.5/ppc (method_exchangeImplementations+Ballard implementation)</li>
+<li>Mac OS X v10.5/i386 (method_exchangeImplementations+Ballard implementation)</li>
+<li>Mac OS X v10.5/ppc64 (method_exchangeImplementations+Ballard implementation)</li>
+<li>Mac OS X v10.5/x86_64 (method_exchangeImplementations+Ballard implementation)</li>
+<li>iOS 2.0+ (method_exchangeImplementations+Ballard implementation)</li>
+</ul>
+</li>
+<li><strong>Robust:</strong> All parameters are checked and JRSwizzle returns an optional <code>NSError</code> with high-quality diagnostics.</li>
+</ul>
+
+
+<h2>Support</h2>
+
+<p>Please use <a href="https://github.com/rentzsch/jrswizzle/issues">JRSwizzle&rsquo;s GitHub Issues tab</a> to <a href="https://github.com/rentzsch/jrswizzle/issues/new">file bugs or feature requests</a>.</p>
+
+<p>To contribute, please fork this project, make+commit your changes and then send me a pull request.</p>
+
+<h2>Comparison</h2>
+
+<p>There&rsquo;s at least four swizzling implementations floating around. Here&rsquo;s a comparison chart to help you make sense of how they relate to each other and why JRSwizzle exists.</p>
+
+<table>
+    <tr>
+        <th>Scenario</th>
+        <th>Swizzle Technology</th>
+        <th>Method Implementation</th>
+        <th>Correct Behavior</th>
+        <th>10.4</th>
+        <th>64-bit</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>Classic</td>
+        <td>Direct</td>
+        <td>YES</td>
+        <td>YES</td>
+        <td>NO</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Classic</td>
+        <td>Inherited</td>
+        <td>NO</td>
+        <td>YES</td>
+        <td>NO</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Ballard</td>
+        <td>Direct</td>
+        <td>YES</td>
+        <td>YES</td>
+        <td>NO</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>Ballard</td>
+        <td>Inherited</td>
+        <td>YES</td>
+        <td>YES</td>
+        <td>NO</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>Apple</td>
+        <td>Direct</td>
+        <td>YES</td>
+        <td>NO</td>
+        <td>YES</td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td>Apple</td>
+        <td>Inherited</td>
+        <td>NO</td>
+        <td>NO</td>
+        <td>YES</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td>JRSwizzle</td>
+        <td>Direct</td>
+        <td>YES</td>
+        <td>YES</td>
+        <td>YES</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td>JRSwizzle</td>
+        <td>Inherited</td>
+        <td>YES</td>
+        <td>YES</td>
+        <td>YES</td>
+    </tr>
+</table>
+
+
+<ul>
+<li><em>Classic</em> is the canonical <code>MethodSwizzle()</code> implementation as described in <a href="http://www.cocoadev.com/index.pl?MethodSwizzling">CocoaDev&rsquo;s MethodSwizzling page</a>.</li>
+<li><em>Ballard</em> is <a href="http://kevin.sb.org/2006/12/30/method-swizzling-reimplemented/">Kevin Ballard&rsquo;s improved implementation</a> which solves the inherited  method problem.</li>
+<li><em>Apple</em> is 10.5&rsquo;s new <code>method_exchangeImplementations</code> API.</li>
+<li><em>JRSwizzle</em> is this package.</li>
+</ul>
+
+
+<h2>License</h2>
+
+<p>The source code is distributed under the nonviral <a href="http://opensource.org/licenses/mit-license.php"><code>MIT License</code></a>. It&rsquo;s the simplest most permissive license available.</p>
+
+<h2>Version History</h2>
+
+<ul>
+<li><p><strong>v1.0:</strong> Mar 2 2012</p>
+
+<ul>
+<li><p>[NEW] iOS Support. (<a href="https://github.com/rentzsch/jrswizzle/commit/60ccb350a3577e55d00d3fdfee8b3c0390b8e852]"><code>Anton Serebryakov</code></a>)</p></li>
+<li><p>[NEW] Class method swizzling. (<a href="https://github.com/rentzsch/jrswizzle/pull/1"><code>outis</code></a>)</p></li>
+</ul>
+</li>
+<li><p><strong>v1.0d1:</strong> May 31 2009</p>
+
+<ul>
+<li><p>[FIX] Soothe valgrind by nulling out <code>hoisted_method_list-&gt;obsolete</code>, which it apparently reads. (<a href="http://github.com/rentzsch/jrswizzle/commit/2f677d063202b443ca7a1c46e8b67d67ea6fc88e"><code>Daniel Jalkut</code></a>)</p></li>
+<li><p>[FIX] Xcode 3.2 apparently now needs <code>ARCHS</code> set explicitly for 10.3 targets. (<a href="http://github.com/rentzsch/jrswizzle/commit/4478faa40e4fdb322201da20f24d3996193ea48b">rentzsch</a>)</p></li>
+</ul>
+</li>
+<li><p><strong>v1.0d0:</strong> Apr 09 2009</p>
+
+<ul>
+<li>Moved to github.</li>
+</ul>
+</li>
+<li><p><strong>v1.0d0:</strong> Dec 28 2007</p>
+
+<ul>
+<li>Under development.</li>
+</ul>
+</li>
+</ul>
+
+						
+						
+					</div>
+					
+                        
+                    
+					
+					
+					
+						
+					<div class="index-column">
+						
+						
+						<h2 class="index-title">Category References</h2>
+						<ul>
+							
+							<li><a href="Categories/NSObject+JRSwizzle.html">NSObject(JRSwizzle)</a></li>
+							
+						</ul>
+						
+					</div>
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<a href="hierarchy.html">Next</a>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Jonathan &apos;Wolf&apos; Rentzsch. All rights reserved. (Last updated: 2013-06-19)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+	
+					</div>
+				</div>
+			</div>
+		</article>		
+	</body>
+</html>
