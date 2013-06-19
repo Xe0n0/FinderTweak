@@ -7,27 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4138C65D17716421002A6E7A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4138C65C17716421002A6E7A /* Cocoa.framework */; };
 		4138C66717716421002A6E7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4138C66517716421002A6E7A /* InfoPlist.strings */; };
+		4138C67017716494002A6E7A /* FinderTabSwitching.m in Sources */ = {isa = PBXBuildFile; fileRef = 4138C66F17716494002A6E7A /* FinderTabSwitching.m */; };
+		4138C67417716BE7002A6E7A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4138C65C17716421002A6E7A /* Cocoa.framework */; };
+		5675F1242CD046D3A0F747C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 979F369EC24F44C99E2D71AF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1676E84603684A3BBE9C33FE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
 		4138C65917716421002A6E7A /* FinderTabSwitching.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderTabSwitching.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		4138C65C17716421002A6E7A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		4138C65F17716421002A6E7A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		4138C66017716421002A6E7A /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		4138C66117716421002A6E7A /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		4138C66417716421002A6E7A /* FinderTabSwitching-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FinderTabSwitching-Info.plist"; sourceTree = "<group>"; };
 		4138C66617716421002A6E7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		4138C66817716421002A6E7A /* FinderTabSwitching-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinderTabSwitching-Prefix.pch"; sourceTree = "<group>"; };
+		4138C66E17716494002A6E7A /* FinderTabSwitching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinderTabSwitching.h; sourceTree = "<group>"; };
+		4138C66F17716494002A6E7A /* FinderTabSwitching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinderTabSwitching.m; sourceTree = "<group>"; };
+		979F369EC24F44C99E2D71AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		4138C65617716421002A6E7A /* Frameworks */ = {
+		66AB84FC1E344BEFB5458EEC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4138C65D17716421002A6E7A /* Cocoa.framework in Frameworks */,
+				4138C67417716BE7002A6E7A /* Cocoa.framework in Frameworks */,
+				5675F1242CD046D3A0F747C3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -37,9 +41,12 @@
 		4138C65017716421002A6E7A = {
 			isa = PBXGroup;
 			children = (
+				4138C66E17716494002A6E7A /* FinderTabSwitching.h */,
+				4138C66F17716494002A6E7A /* FinderTabSwitching.m */,
 				4138C66217716421002A6E7A /* FinderTabSwitching */,
 				4138C65B17716421002A6E7A /* Frameworks */,
 				4138C65A17716421002A6E7A /* Products */,
+				1676E84603684A3BBE9C33FE /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -55,19 +62,9 @@
 			isa = PBXGroup;
 			children = (
 				4138C65C17716421002A6E7A /* Cocoa.framework */,
-				4138C65E17716421002A6E7A /* Other Frameworks */,
+				979F369EC24F44C99E2D71AF /* libPods.a */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		4138C65E17716421002A6E7A /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				4138C65F17716421002A6E7A /* Foundation.framework */,
-				4138C66017716421002A6E7A /* CoreData.framework */,
-				4138C66117716421002A6E7A /* AppKit.framework */,
-			);
-			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
 		4138C66217716421002A6E7A /* FinderTabSwitching */ = {
@@ -95,9 +92,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4138C66B17716421002A6E7A /* Build configuration list for PBXNativeTarget "FinderTabSwitching" */;
 			buildPhases = (
+				A43E375E2E2946559B038642 /* Check Pods Manifest.lock */,
 				4138C65517716421002A6E7A /* Sources */,
-				4138C65617716421002A6E7A /* Frameworks */,
 				4138C65717716421002A6E7A /* Resources */,
+				41305F9D177166F60079A402 /* ShellScript */,
+				66AB84FC1E344BEFB5458EEC /* Frameworks */,
+				47E560C7CFAA4A789E94322A /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -145,11 +145,56 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41305F9D177166F60079A402 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# clean up any previous products/symbolic links in the SIMBL Plugins folder\nif [ -a \"${USER_LIBRARY_DIR}/Application Support/SIMBL/Plugins/${FULL_PRODUCT_NAME}\" ]; then\nrm -Rf \"${USER_LIBRARY_DIR}/Application Support/SIMBL/Plugins/${FULL_PRODUCT_NAME}\"\nfi\n\n# Depending on the build configuration, either copy or link to the most recent product\nif [ \"${CONFIGURATION}\" == \"Debug\" ]; then\n# if we're debugging, add a symbolic link to the plug-in\nln -sf \"${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}\" \"${USER_LIBRARY_DIR}/Application Support/SIMBL/Plugins/${FULL_PRODUCT_NAME}\"\nelif [ \"${CONFIGURATION}\" == \"Release\" ]; then\n# if we're compiling for release, just copy the plugin to the SIMBL Plugins folder\ncp -Rfv \"${TARGET_BUILD_DIR}/${FULL_PRODUCT_NAME}\" \"${USER_LIBRARY_DIR}/Application Support/SIMBL/Plugins/${FULL_PRODUCT_NAME}\"\nfi";
+		};
+		47E560C7CFAA4A789E94322A /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+		};
+		A43E375E2E2946559B038642 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4138C65517716421002A6E7A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4138C67017716494002A6E7A /* FinderTabSwitching.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,12 +284,24 @@
 		};
 		4138C66C17716421002A6E7A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1676E84603684A3BBE9C33FE /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_EMPTY_BODY = NO;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INT_CONVERSION = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FinderTabSwitching/FinderTabSwitching-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				INFOPLIST_FILE = "FinderTabSwitching/FinderTabSwitching-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_OPENMP_FLAGS = "-fopenmp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -252,12 +309,24 @@
 		};
 		4138C66D17716421002A6E7A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1676E84603684A3BBE9C33FE /* Pods.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = NO;
+				CLANG_WARN_BOOL_CONVERSION = NO;
+				CLANG_WARN_CONSTANT_CONVERSION = NO;
+				CLANG_WARN_EMPTY_BODY = NO;
+				CLANG_WARN_ENUM_CONVERSION = NO;
+				CLANG_WARN_INT_CONVERSION = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "FinderTabSwitching/FinderTabSwitching-Prefix.pch";
+				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
+				GCC_WARN_UNDECLARED_SELECTOR = NO;
+				GCC_WARN_UNINITIALIZED_AUTOS = NO;
+				GCC_WARN_UNUSED_FUNCTION = NO;
 				INFOPLIST_FILE = "FinderTabSwitching/FinderTabSwitching-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				LD_OPENMP_FLAGS = "-fopenmp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = bundle;
 			};
@@ -282,6 +351,7 @@
 				4138C66D17716421002A6E7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

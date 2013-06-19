@@ -26,5 +26,16 @@
 	<string>Copyright © 2013 wuhaotian. All rights reserved.</string>
 	<key>NSPrincipalClass</key>
 	<string></string>
+	<key>SIMBLTargetApplications</key>
+	<array>
+		<dict>
+			<key>BundleIdentifier</key>
+			<string>com.apple.finder</string>
+			<key>MaxBundleVersion</key>
+			<string>10.9</string>
+			<key>MinBundleVersion</key>
+			<string>10.9</string>
+		</dict>
+	</array>
 </dict>
 </plist>
