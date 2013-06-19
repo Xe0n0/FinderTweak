@@ -14,4 +14,4 @@ Mavericks Only.
 	Or you can build from the source. You may need Xcode 5 to make a valid version.
 	
 # Usage
-Now you can use `⌘ + num` to switch between Finder Tabs.
+Now you can use `⌘ + num` to switch between Finder tabs.
