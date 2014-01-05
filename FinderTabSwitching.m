@@ -76,19 +76,28 @@
 - (NSEvent *)FTS_nextEventMatchingMask:(NSUInteger)mask untilDate:(NSDate *)expiration inMode:(NSString *)mode dequeue:(BOOL)deqFlag
 {
     NSEvent *event = [self FTS_nextEventMatchingMask:mask untilDate:expiration inMode:mode dequeue:deqFlag];
-    
+  
+    if (event.type == NSKeyDown
+        && (event.modifierFlags & NSDeviceIndependentModifierFlagsMask) == NSCommandKeyMask) // only command modifier pressed
+    {
+          NSString *source = [[NSThread callStackSymbols] objectAtIndex:1];
+          if ([source rangeOfString:@"NSApplication"].location == NSNotFound) {
+              [NSApp sendEvent:event];
+          }
+          return nil;
+    }
+  
+    return event;
+}
+
+- (void)FinderTabSwitching_sendEvent:(NSEvent *)event
+{
+  
     static NSArray *keyCode2TabIndex = nil;
     
     if (event.type == NSKeyDown
         && (event.modifierFlags & NSDeviceIndependentModifierFlagsMask) == NSCommandKeyMask) // only command modifier pressed
     {
-        if (event.keyCode == 50) {
-            NSString *source = [[NSThread callStackSymbols] objectAtIndex:1];
-            if ([source rangeOfString:@"NSApplication"].location == NSNotFound) {
-                [NSApp sendEvent:event];
-            }
-            return nil;
-        }
         if (!keyCode2TabIndex)
         {
             keyCode2TabIndex = [[NSArray alloc] initWithObjects:@"18", @"19", @"20", @"21", @"23", @"22", @"26", @"28", @"25", nil];
@@ -113,17 +122,10 @@
                 
                 [tabView performSelector:@selector(selectTabViewItemAtIndex:) withObject:(id)tabIndex];
                 
-                return nil; // prevent event dispatching
+                return; // prevent event dispatching
             }
         }
     }
-    
-    return event;
-}
-
-- (void)FinderTabSwitching_sendEvent:(NSEvent *)event
-{
-    
     
     [self FinderTabSwitching_sendEvent:event];
 }
