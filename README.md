@@ -8,8 +8,8 @@ Mavericks Only.
 
 # Install
 
-1. download [SIMBL-0.9.9.zip](http://www.culater.net/dl/files/SIMBL-0.9.9.zip) and install
-2. install FinderTabSwitching from [installer](http://cl.ly/333l2A472L3I)
+1. Install [EasySIMBL](https://github.com/norio-nomura/EasySIMBL/)
+2. Install FinderTabSwitching from [Bundle](http://cl.ly/333l2A472L3I)
 	
 	Or you can build from the source. You may need Xcode 5 to make a valid version.
 	
