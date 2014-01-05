@@ -19,21 +19,76 @@
 + (void)load
 {
     NSLog(@"Finder Tab Switching Loaded");
-    [NSClassFromString(@"NSApplication") jr_swizzleMethod:@selector(sendEvent:) withMethod:@selector(FinderTabSwitching_sendEvent:) error:NULL];
+    
+    NSError *e = nil;
+    
+    if (![NSClassFromString(@"TApplication") jr_swizzleMethod:@selector(sendEvent:) withMethod:@selector(FinderTabSwitching_sendEvent:) error:&e])
+    
+        NSLog(@"%@", e);
+    
+    //if (![NSClassFromString(@"TApplicationController") jr_swizzleMethod:@selector(cmdCycleWindows:) withMethod:@selector(XRLog:) error:&e])
+     //   NSLog(@"%@", e);
+   
+    if (![NSClassFromString(@"TApplication") jr_swizzleMethod:
+    @selector(nextEventMatchingMask:untilDate:inMode:dequeue:)
+          withMethod:@selector(FTS_nextEventMatchingMask:untilDate:inMode:dequeue:) error:&e])
+        
+        NSLog(@"%@", e);
+
+}
+@end
+
+@implementation NSObject(FinderTabSwitching)
+
+- (void)log_stack
+{
+    
+    
+    [[NSThread callStackSymbols] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        NSString *sourceString = obj;
+    
+        NSCharacterSet *separatorSet = [NSCharacterSet characterSetWithCharactersInString:@" -[]+?.,"];
+        NSMutableArray *array = [NSMutableArray arrayWithArray:[sourceString  componentsSeparatedByCharactersInSet:separatorSet]];
+        [array removeObject:@""];
+        
+        NSLog(@"Stack = %@", [array objectAtIndex:0]);
+        NSLog(@"Framework = %@", [array objectAtIndex:1]);
+        NSLog(@"Memory address = %@", [array objectAtIndex:2]);
+        NSLog(@"Class caller = %@", [array objectAtIndex:3]);
+        NSLog(@"Function caller = %@", [array objectAtIndex:4]);
+        if ([[array objectAtIndex:3] isEqualTo:@"NSApplicationMain"]) *stop = YES;
+    }];
+}
+
+- (void)XRLog:(id)obj
+{
+    NSLog(@"%@", obj);
+    [self log_stack];
+    [self XRLog:obj];
+    
 }
 
 @end
 
-
 @implementation NSApplication(FinderTabSwitching)
 
-- (void)FinderTabSwitching_sendEvent:(NSEvent *)event
+
+- (NSEvent *)FTS_nextEventMatchingMask:(NSUInteger)mask untilDate:(NSDate *)expiration inMode:(NSString *)mode dequeue:(BOOL)deqFlag
 {
+    NSEvent *event = [self FTS_nextEventMatchingMask:mask untilDate:expiration inMode:mode dequeue:deqFlag];
+    
     static NSArray *keyCode2TabIndex = nil;
     
     if (event.type == NSKeyDown
         && (event.modifierFlags & NSDeviceIndependentModifierFlagsMask) == NSCommandKeyMask) // only command modifier pressed
     {
+        if (event.keyCode == 50) {
+            NSString *source = [[NSThread callStackSymbols] objectAtIndex:1];
+            if ([source rangeOfString:@"NSApplication"].location == NSNotFound) {
+                [NSApp sendEvent:event];
+            }
+            return nil;
+        }
         if (!keyCode2TabIndex)
         {
             keyCode2TabIndex = [[NSArray alloc] initWithObjects:@"18", @"19", @"20", @"21", @"23", @"22", @"26", @"28", @"25", nil];
@@ -50,7 +105,7 @@
                 tabView = [[keyWindow contentView] subviews][0];
             }
             NSViewController * controller = keyWindow.windowController;
-            NSLog(@"%@", keyWindow.windowController);
+            
             if ([tabView respondsToSelector:@selector(selectTabViewItemAtIndex:)] && [controller respondsToSelector:@selector(tabCount)])
             {
                 long long tabCount = [controller performSelector:@selector(tabCount) withObject:nil];
@@ -58,10 +113,17 @@
                 
                 [tabView performSelector:@selector(selectTabViewItemAtIndex:) withObject:(id)tabIndex];
                 
-                return; // prevent event dispatching
+                return nil; // prevent event dispatching
             }
         }
     }
+    
+    return event;
+}
+
+- (void)FinderTabSwitching_sendEvent:(NSEvent *)event
+{
+    
     
     [self FinderTabSwitching_sendEvent:event];
 }
