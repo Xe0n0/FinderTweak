@@ -62,7 +62,6 @@
 
 - (void)XRLog:(id)obj
 {
-    NSLog(@"%@", obj);
     [self log_stack];
     [self XRLog:obj];
     
