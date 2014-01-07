@@ -1,6 +1,6 @@
 //
-//  FinderTabSwitching.m
-//  FinderTabSwitching
+//  FinderTweak.m
+//  FinderTweak
 //
 //  Created by wuhaotian on 6/19/13.
 //  Copyright (c) 2013 wuhaotian. All rights reserved.
