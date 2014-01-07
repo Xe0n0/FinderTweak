@@ -6,10 +6,10 @@
 //  Copyright (c) 2013 wuhaotian. All rights reserved.
 //
 
-#import "FinderTabSwitching.h"
+#import "FinderTweak.h"
 #import "JRSwizzle.h"
 
-@implementation FinderTabSwitching
+@implementation FinderTweak
 
 + (NSString *)pluginVersion
 {
@@ -18,7 +18,7 @@
 
 + (void)load
 {
-    NSLog(@"Finder Tab Switching Loaded");
+    NSLog(@"Finder Tweak Loaded");
     
     NSError *e = nil;
     
@@ -38,7 +38,7 @@
 }
 @end
 
-@implementation NSObject(FinderTabSwitching)
+@implementation NSObject(FinderTweak)
 
 - (void)log_stack
 {
@@ -69,7 +69,7 @@
 
 @end
 
-@implementation NSApplication(FinderTabSwitching)
+@implementation NSApplication(FinderTweak)
 
 
 - (NSEvent *)FTS_nextEventMatchingMask:(NSUInteger)mask untilDate:(NSDate *)expiration inMode:(NSString *)mode dequeue:(BOOL)deqFlag

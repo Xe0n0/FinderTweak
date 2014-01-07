@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "4138C65817716421002A6E7A"
-               BuildableName = "FinderTabSwitching.bundle"
-               BlueprintName = "FinderTabSwitching"
-               ReferencedContainer = "container:FinderTabSwitching.xcodeproj">
+               BuildableName = "FinderTweak.bundle"
+               BlueprintName = "FinderTweak"
+               ReferencedContainer = "container:FinderTweak.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

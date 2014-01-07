@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FinderTabSwitching : NSObject
+@interface FinderTweak : NSObject
 
 @end

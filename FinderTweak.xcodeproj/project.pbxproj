@@ -8,20 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		4138C66717716421002A6E7A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4138C66517716421002A6E7A /* InfoPlist.strings */; };
-		4138C67017716494002A6E7A /* FinderTabSwitching.m in Sources */ = {isa = PBXBuildFile; fileRef = 4138C66F17716494002A6E7A /* FinderTabSwitching.m */; };
+		4138C67017716494002A6E7A /* FinderTweak.m in Sources */ = {isa = PBXBuildFile; fileRef = 4138C66F17716494002A6E7A /* FinderTweak.m */; };
 		4138C67417716BE7002A6E7A /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4138C65C17716421002A6E7A /* Cocoa.framework */; };
 		5675F1242CD046D3A0F747C3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 979F369EC24F44C99E2D71AF /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1676E84603684A3BBE9C33FE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = SOURCE_ROOT; };
-		4138C65917716421002A6E7A /* FinderTabSwitching.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderTabSwitching.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		4138C65917716421002A6E7A /* FinderTweak.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FinderTweak.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		4138C65C17716421002A6E7A /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
-		4138C66417716421002A6E7A /* FinderTabSwitching-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FinderTabSwitching-Info.plist"; sourceTree = "<group>"; };
+		4138C66417716421002A6E7A /* FinderTweak-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "FinderTweak-Info.plist"; path = "../FinderTweak/FinderTweak-Info.plist"; sourceTree = "<group>"; };
 		4138C66617716421002A6E7A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		4138C66817716421002A6E7A /* FinderTabSwitching-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinderTabSwitching-Prefix.pch"; sourceTree = "<group>"; };
-		4138C66E17716494002A6E7A /* FinderTabSwitching.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinderTabSwitching.h; sourceTree = "<group>"; };
-		4138C66F17716494002A6E7A /* FinderTabSwitching.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinderTabSwitching.m; sourceTree = "<group>"; };
+		4138C66817716421002A6E7A /* FinderTweak-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FinderTweak-Prefix.pch"; sourceTree = "<group>"; };
+		4138C66E17716494002A6E7A /* FinderTweak.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FinderTweak.h; sourceTree = "<group>"; };
+		4138C66F17716494002A6E7A /* FinderTweak.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FinderTweak.m; sourceTree = "<group>"; };
 		979F369EC24F44C99E2D71AF /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -41,9 +41,9 @@
 		4138C65017716421002A6E7A = {
 			isa = PBXGroup;
 			children = (
-				4138C66E17716494002A6E7A /* FinderTabSwitching.h */,
-				4138C66F17716494002A6E7A /* FinderTabSwitching.m */,
-				4138C66217716421002A6E7A /* FinderTabSwitching */,
+				4138C66E17716494002A6E7A /* FinderTweak.h */,
+				4138C66F17716494002A6E7A /* FinderTweak.m */,
+				4138C66217716421002A6E7A /* FinderTweak */,
 				4138C65B17716421002A6E7A /* Frameworks */,
 				4138C65A17716421002A6E7A /* Products */,
 				1676E84603684A3BBE9C33FE /* Pods.xcconfig */,
@@ -53,7 +53,7 @@
 		4138C65A17716421002A6E7A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4138C65917716421002A6E7A /* FinderTabSwitching.bundle */,
+				4138C65917716421002A6E7A /* FinderTweak.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -67,20 +67,20 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4138C66217716421002A6E7A /* FinderTabSwitching */ = {
+		4138C66217716421002A6E7A /* FinderTweak */ = {
 			isa = PBXGroup;
 			children = (
 				4138C66317716421002A6E7A /* Supporting Files */,
 			);
-			path = FinderTabSwitching;
+			path = FinderTweak;
 			sourceTree = "<group>";
 		};
 		4138C66317716421002A6E7A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				4138C66417716421002A6E7A /* FinderTabSwitching-Info.plist */,
+				4138C66417716421002A6E7A /* FinderTweak-Info.plist */,
 				4138C66517716421002A6E7A /* InfoPlist.strings */,
-				4138C66817716421002A6E7A /* FinderTabSwitching-Prefix.pch */,
+				4138C66817716421002A6E7A /* FinderTweak-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -88,9 +88,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		4138C65817716421002A6E7A /* FinderTabSwitching */ = {
+		4138C65817716421002A6E7A /* FinderTweak */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 4138C66B17716421002A6E7A /* Build configuration list for PBXNativeTarget "FinderTabSwitching" */;
+			buildConfigurationList = 4138C66B17716421002A6E7A /* Build configuration list for PBXNativeTarget "FinderTweak" */;
 			buildPhases = (
 				A43E375E2E2946559B038642 /* Check Pods Manifest.lock */,
 				4138C65517716421002A6E7A /* Sources */,
@@ -103,9 +103,9 @@
 			);
 			dependencies = (
 			);
-			name = FinderTabSwitching;
+			name = FinderTweak;
 			productName = FinderTabSwitching;
-			productReference = 4138C65917716421002A6E7A /* FinderTabSwitching.bundle */;
+			productReference = 4138C65917716421002A6E7A /* FinderTweak.bundle */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +117,7 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = wuhaotian;
 			};
-			buildConfigurationList = 4138C65417716421002A6E7A /* Build configuration list for PBXProject "FinderTabSwitching" */;
+			buildConfigurationList = 4138C65417716421002A6E7A /* Build configuration list for PBXProject "FinderTweak" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -129,7 +129,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				4138C65817716421002A6E7A /* FinderTabSwitching */,
+				4138C65817716421002A6E7A /* FinderTweak */,
 			);
 		};
 /* End PBXProject section */
@@ -194,7 +194,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4138C67017716494002A6E7A /* FinderTabSwitching.m in Sources */,
+				4138C67017716494002A6E7A /* FinderTweak.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +207,7 @@
 				4138C66617716421002A6E7A /* en */,
 			);
 			name = InfoPlist.strings;
+			path = ../FinderTweak;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -294,15 +295,15 @@
 				CLANG_WARN_INT_CONVERSION = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FinderTabSwitching/FinderTabSwitching-Prefix.pch";
+				GCC_PREFIX_HEADER = "FinderTweak/FinderTweak-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
-				INFOPLIST_FILE = "FinderTabSwitching/FinderTabSwitching-Info.plist";
+				INFOPLIST_FILE = "FinderTweak/FinderTweak-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_OPENMP_FLAGS = "-fopenmp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FinderTweak;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Debug;
@@ -319,15 +320,15 @@
 				CLANG_WARN_INT_CONVERSION = NO;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "FinderTabSwitching/FinderTabSwitching-Prefix.pch";
+				GCC_PREFIX_HEADER = "FinderTweak/FinderTweak-Prefix.pch";
 				GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS = NO;
 				GCC_WARN_UNDECLARED_SELECTOR = NO;
 				GCC_WARN_UNINITIALIZED_AUTOS = NO;
 				GCC_WARN_UNUSED_FUNCTION = NO;
-				INFOPLIST_FILE = "FinderTabSwitching/FinderTabSwitching-Info.plist";
+				INFOPLIST_FILE = "FinderTweak/FinderTweak-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
 				LD_OPENMP_FLAGS = "-fopenmp";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = FinderTweak;
 				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
@@ -335,7 +336,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		4138C65417716421002A6E7A /* Build configuration list for PBXProject "FinderTabSwitching" */ = {
+		4138C65417716421002A6E7A /* Build configuration list for PBXProject "FinderTweak" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4138C66917716421002A6E7A /* Debug */,
@@ -344,7 +345,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		4138C66B17716421002A6E7A /* Build configuration list for PBXNativeTarget "FinderTabSwitching" */ = {
+		4138C66B17716421002A6E7A /* Build configuration list for PBXNativeTarget "FinderTweak" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				4138C66C17716421002A6E7A /* Debug */,
