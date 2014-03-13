@@ -30,10 +30,10 @@
 //        @selector(selectOrCreateWindowWithOptions:inTarget:) withClassMethod:@selector(FTSelectOrCreateWindowWithOptions:inTarget:) error:&e])
 //        NSLog(@"%@", e);
 //  
-//  if (![NSClassFromString(@"TGlobalWindowController") jr_swizzleMethod:
-//        @selector(shouldUseMergeAllWindowsAnimation) withMethod:
-//        @selector(FTShouldUseMergeAllWindowsAnimation) error:&e])
-//        NSLog(@"%@", e);
+  if (![NSClassFromString(@"TGlobalWindowController") jr_swizzleMethod:
+        @selector(shouldUseMergeAllWindowsAnimation) withMethod:
+        @selector(FTShouldUseMergeAllWindowsAnimation) error:&e])
+        NSLog(@"%@", e);
     if (![NSClassFromString(@"TApplication") jr_swizzleMethod:
     @selector(nextEventMatchingMask:untilDate:inMode:dequeue:)
           withMethod:@selector(FTS_nextEventMatchingMask:untilDate:inMode:dequeue:) error:&e])
@@ -89,11 +89,11 @@
 
 @implementation NSResponder (FinderTweak)
 
-//- (BOOL)FTShouldUseMergeAllWindowsAnimation
-//{
-//  return NO;
-//}
-//
+- (BOOL)FTShouldUseMergeAllWindowsAnimation
+{
+  return NO;
+}
+
 //+ (id)FTSelectOrCreateWindowWithOptions:(id)arg1 inTarget:(const void *)arg2
 //{
 //  id obj = [self globalWindowController];
