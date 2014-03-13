@@ -25,10 +25,15 @@
     if (![NSClassFromString(@"TApplication") jr_swizzleMethod:@selector(sendEvent:) withMethod:@selector(FinderTabSwitching_sendEvent:) error:&e])
     
         NSLog(@"%@", e);
-    
-    //if (![NSClassFromString(@"TApplicationController") jr_swizzleMethod:@selector(cmdCycleWindows:) withMethod:@selector(XRLog:) error:&e])
-     //   NSLog(@"%@", e);
-   
+  
+//  if (![NSClassFromString(@"TGlobalWindowController") jr_swizzleClassMethod:
+//        @selector(selectOrCreateWindowWithOptions:inTarget:) withClassMethod:@selector(FTSelectOrCreateWindowWithOptions:inTarget:) error:&e])
+//        NSLog(@"%@", e);
+//  
+//  if (![NSClassFromString(@"TGlobalWindowController") jr_swizzleMethod:
+//        @selector(shouldUseMergeAllWindowsAnimation) withMethod:
+//        @selector(FTShouldUseMergeAllWindowsAnimation) error:&e])
+//        NSLog(@"%@", e);
     if (![NSClassFromString(@"TApplication") jr_swizzleMethod:
     @selector(nextEventMatchingMask:untilDate:inMode:dequeue:)
           withMethod:@selector(FTS_nextEventMatchingMask:untilDate:inMode:dequeue:) error:&e])
@@ -37,7 +42,7 @@
 
 }
 @end
-
+//only for debug
 @implementation NSObject(FinderTweak)
 
 - (void)log_stack
@@ -60,12 +65,41 @@
     }];
 }
 
-- (void)XRLog:(id)obj
+- (void)XRLog2:(id)obj arg2:(id)arg2
 {
+  [self log_stack];
+  [self XRLog2:obj arg2:arg2];
+}
+
+- (void)XRLog
+{
+  [self log_stack];
+  [self XRLog];
+}
+
+- (void)XRLog1:(id)obj
+{
+  
     [self log_stack];
-    [self XRLog:obj];
+    [self XRLog1:obj];
     
 }
+
+@end
+
+@implementation NSResponder (FinderTweak)
+
+//- (BOOL)FTShouldUseMergeAllWindowsAnimation
+//{
+//  return NO;
+//}
+//
+//+ (id)FTSelectOrCreateWindowWithOptions:(id)arg1 inTarget:(const void *)arg2
+//{
+//  id obj = [self globalWindowController];
+//  NSLog(@"%@", obj);
+//  return [self FTSelectOrCreateWindowWithOptions:arg1 inTarget:arg2];
+//}
 
 @end
 
@@ -91,8 +125,10 @@
 
 - (void)FinderTabSwitching_sendEvent:(NSEvent *)event
 {
-  
     static NSArray *keyCode2TabIndex = nil;
+  if (event.type == NSKeyDown) {
+    
+  }
     
     if (event.type == NSKeyDown
         && (event.modifierFlags & NSDeviceIndependentModifierFlagsMask) == NSCommandKeyMask) // only command modifier pressed
@@ -107,22 +143,27 @@
         if (tabIndex != NSNotFound)
         {
             NSWindow *keyWindow = [[NSApplication sharedApplication] keyWindow];
-            NSArray * views = [[keyWindow contentView] subviews];
-            NSView * tabView = nil;
-            if (views.count) {
-                tabView = [[keyWindow contentView] subviews][0];
-            }
+          
+            __block NSView * tabView = nil;
+          
+            [[keyWindow.contentView subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+              
+              if ([obj respondsToSelector:@selector(selectTabViewItemAtIndex:)]) {
+                tabView = obj;
+              }
+              
+            }];
             NSViewController * controller = keyWindow.windowController;
-            
-            if ([tabView respondsToSelector:@selector(selectTabViewItemAtIndex:)] && [controller respondsToSelector:@selector(tabCount)])
+          
+            if (tabView != nil && [controller respondsToSelector:@selector(tabCount)])
             {
                 long long tabCount = [controller performSelector:@selector(tabCount) withObject:nil];
                 tabIndex = tabCount >= (tabIndex + 1) ? tabIndex: tabCount - 1;
                 
                 [tabView performSelector:@selector(selectTabViewItemAtIndex:) withObject:(id)tabIndex];
                 
-                return; // prevent event dispatching
             }
+            return;
         }
     }
     
