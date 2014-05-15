@@ -23,31 +23,32 @@
     NSError *e = nil;
     
     if (![NSClassFromString(@"TApplication") jr_swizzleMethod:@selector(sendEvent:) withMethod:@selector(FinderTabSwitching_sendEvent:) error:&e])
-    
         NSLog(@"%@", e);
   
-//  if (![NSClassFromString(@"TGlobalWindowController") jr_swizzleClassMethod:
-//        @selector(selectOrCreateWindowWithOptions:inTarget:) withClassMethod:@selector(FTSelectOrCreateWindowWithOptions:inTarget:) error:&e])
-//        NSLog(@"%@", e);
-//  
+  if (![NSClassFromString(@"TGlobalWindowController") jr_swizzleClassMethod:
+        @selector(selectOrCreateWindowWithOptions:inTarget:) withClassMethod:@selector(FTSelectOrCreateWindowWithOptions:inTarget:) error:&e])
+        NSLog(@"%@", e);
+  
   if (![NSClassFromString(@"TGlobalWindowController") jr_swizzleMethod:
         @selector(shouldUseMergeAllWindowsAnimation) withMethod:
         @selector(FTShouldUseMergeAllWindowsAnimation) error:&e])
         NSLog(@"%@", e);
+  
     if (![NSClassFromString(@"TApplication") jr_swizzleMethod:
     @selector(nextEventMatchingMask:untilDate:inMode:dequeue:)
           withMethod:@selector(FTS_nextEventMatchingMask:untilDate:inMode:dequeue:) error:&e])
         
         NSLog(@"%@", e);
-
+  
 }
 @end
 //only for debug
+
+
 @implementation NSObject(FinderTweak)
 
 - (void)log_stack
 {
-    
     
     [[NSThread callStackSymbols] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         NSString *sourceString = obj;
@@ -87,6 +88,7 @@
 
 @end
 
+
 @implementation NSResponder (FinderTweak)
 
 - (BOOL)FTShouldUseMergeAllWindowsAnimation
@@ -94,12 +96,14 @@
   return NO;
 }
 
-//+ (id)FTSelectOrCreateWindowWithOptions:(id)arg1 inTarget:(const void *)arg2
-//{
-//  id obj = [self globalWindowController];
-//  NSLog(@"%@", obj);
-//  return [self FTSelectOrCreateWindowWithOptions:arg1 inTarget:arg2];
-//}
++ (id)FTSelectOrCreateWindowWithOptions:(id)arg1 inTarget:(const void *)arg2
+{
+  //id obj = [self globalWindowController];
+  id browser = [self frontmostBrowserWindowController];
+  if ([browser respondsToSelector:@selector(selectOrCreateTabWithTarget:windowOptions:addAfterActiveTab:)])
+      [browser selectOrCreateTabWithTarget:arg2 windowOptions:arg1 addAfterActiveTab:YES];
+  return [self FTSelectOrCreateWindowWithOptions:arg1 inTarget:arg2];
+}
 
 @end
 
