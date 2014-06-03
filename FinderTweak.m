@@ -39,12 +39,6 @@
           withMethod:@selector(FTS_nextEventMatchingMask:untilDate:inMode:dequeue:) error:&e])
         
         NSLog(@"%@", e);
-  
-  if (![NSClassFromString(@"TTabView") jr_swizzleMethod:
-        @selector(plusButtonClicked)
-                                             withMethod:@selector(FT_plusButtonClicked) error:&e])
-    
-    NSLog(@"%@", e);
 }
 @end
 //only for debug
@@ -87,11 +81,7 @@
   else
     NSLog(@"%@",  [self window]);
 }
-- (void)FT_plusButtonClicked {
 
-  [self logSuper:10];
-  [self FT_plusButtonClicked];
-}
 @end
 
 @implementation NSObject(FinderTweak)
