@@ -40,10 +40,59 @@
         
         NSLog(@"%@", e);
   
+  if (![NSClassFromString(@"TTabView") jr_swizzleMethod:
+        @selector(plusButtonClicked)
+                                             withMethod:@selector(FT_plusButtonClicked) error:&e])
+    
+    NSLog(@"%@", e);
 }
 @end
 //only for debug
 
+@implementation NSView(FinderTweak)
+
+- (void)logViewHierarchy:(NSInteger )level
+{
+  NSLog(@"%ld: %@", (long)level, self);
+  for (NSView *subview in self.subviews)
+  {
+    [subview logViewHierarchy:level + 1];
+  }
+}
+
+- (id)searchForSelect:(SEL)selector maxLevel:(long long)level {
+  
+  if ([self respondsToSelector:selector]) {
+    return self;
+  }
+  else if (level > 0) {
+  
+    NSView *view;
+    for (NSView *subview in self.subviews)
+    {
+      if ((view = [subview searchForSelect:selector maxLevel:level - 1]))
+        return view;
+    }
+    
+  }
+  
+  return nil;
+}
+
+- (void)logSuper:(long)level {
+  NSLog(@"%ld: %@", level, self);
+  if ([self superview]) {
+    [[self superview] logSuper:level - 1];
+  }
+  else
+    NSLog(@"%@",  [self window]);
+}
+- (void)FT_plusButtonClicked {
+
+  [self logSuper:10];
+  [self FT_plusButtonClicked];
+}
+@end
 
 @implementation NSObject(FinderTweak)
 
@@ -146,17 +195,21 @@
         
         if (tabIndex != NSNotFound)
         {
+            __block NSView * tabView = nil;
             NSWindow *keyWindow = [[NSApplication sharedApplication] keyWindow];
           
-            __block NSView * tabView = nil;
-          
-            [[keyWindow.contentView subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+            [[[keyWindow contentView] subviews] enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
               
-              if ([obj respondsToSelector:@selector(selectTabViewItemAtIndex:)]) {
-                tabView = obj;
-              }
-              
+                if ([obj respondsToSelector:@selector(selectTabViewItemAtIndex:)]) {
+                  tabView = obj;
+                }
             }];
+          
+          if (tabView == nil) {
+            tabView = [[[[keyWindow contentView] superview] subviews][1] searchForSelect:@selector(selectTabViewItemAtIndex:) maxLevel:3];
+          }
+          
+          
             NSViewController * controller = keyWindow.windowController;
           
             if (tabView != nil && [controller respondsToSelector:@selector(tabCount)])
