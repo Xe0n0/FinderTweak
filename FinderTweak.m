@@ -64,6 +64,7 @@
     NSView *view;
     for (NSView *subview in self.subviews)
     {
+//      NSLog(@"%@ : %lld", subview, level);
       if ((view = [subview searchForSelect:selector maxLevel:level - 1]))
         return view;
     }
@@ -182,7 +183,6 @@
         }
         
         NSUInteger tabIndex = [keyCode2TabIndex indexOfObject:[[NSNumber numberWithInt:event.keyCode] stringValue]];
-        
         if (tabIndex != NSNotFound)
         {
             __block NSView * tabView = nil;
@@ -196,10 +196,10 @@
             }];
           
           if (tabView == nil) {
-            tabView = [[[[keyWindow contentView] superview] subviews][1] searchForSelect:@selector(selectTabViewItemAtIndex:) maxLevel:3];
+            tabView = [[[[keyWindow contentView] superview] subviews][1] searchForSelect:@selector(selectTabViewItemAtIndex:) maxLevel:4];
           }
           
-          
+
             NSViewController * controller = keyWindow.windowController;
           
             if (tabView != nil && [controller respondsToSelector:@selector(tabCount)])
