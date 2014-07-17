@@ -8,7 +8,7 @@ FinderTweak
 3. open folder in new Tab instead of new window.
 3. No more merge all window animations
 
-Mavericks Only.
+10.9 or above
 
 # Install
 
