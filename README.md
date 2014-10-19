@@ -13,11 +13,11 @@ FinderTweak
 # Install
 
 1. Install [EasySIMBL](https://github.com/norio-nomura/EasySIMBL/)
-2. Drag FinderTweak bundle into EasySIMBL. Download [Bundle](http://cl.ly/2B1X3m2w1R3M)
-	
-	Or you can build from the source. The bundle will be automatically installed into EasySIMBL's plugin folder after build. You may need Xcode 5 to build a valid version.
-	
+2. Drag FinderTweak bundle into EasySIMBL. Download [Bundle](http://cl.ly/2B1X3m2w1R3M). (For 10.9 use [Bundle](http://cl.ly/3C1Z1l2Q3i32))
+
+        Or you can build from the source. The bundle will be automatically installed into EasySIMBL's plugin folder after build. You may need Xcode 5 to build a valid version.
+
 3. You need to relaunch your Finder after installation.
-	
+
 # Usage
 Now you can use `⌘ + num` to switch between Finder tabs.
