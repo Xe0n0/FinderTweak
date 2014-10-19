@@ -4,7 +4,7 @@ FinderTweak
 ##Feature
 
 1. switch tabs in Finder.app on OS X 10.9 Mavericks with `⌘ + num` shortcuts.
-2. cycle windows (`` ⌘ + ` ``) or switch tabs while dragging item.
+2. cycle windows (`` ⌘ + ` ``) or switch tabs while dragging item. (not work for 10.10 currently)
 3. open folder in new Tab instead of new window.
 3. No more merge all window animations
 

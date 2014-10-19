@@ -34,11 +34,11 @@
         @selector(FTShouldUseMergeAllWindowsAnimation) error:&e])
         NSLog(@"%@", e);
   
-    if (![NSClassFromString(@"TApplication") jr_swizzleMethod:
-    @selector(nextEventMatchingMask:untilDate:inMode:dequeue:)
-          withMethod:@selector(FTS_nextEventMatchingMask:untilDate:inMode:dequeue:) error:&e])
-        
-        NSLog(@"%@", e);
+//    if (![NSClassFromString(@"TApplication") jr_swizzleMethod:
+//    @selector(nextEventMatchingMask:untilDate:inMode:dequeue:)
+//          withMethod:@selector(FTS_nextEventMatchingMask:untilDate:inMode:dequeue:) error:&e])
+//        
+//        NSLog(@"%@", e);
 }
 @end
 //only for debug
